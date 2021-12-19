@@ -1,0 +1,129 @@
+/*============================
+BASE
+============================*/
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+    color: #333;
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
+a{
+    color: #333;
+}
+
+ul,
+li {
+    display: inline;
+    margin: 0;
+}
+
+.inner{
+    max-width: 1200px;
+    padding: 0 40px;
+    margin: 0 auto;
+    box-sizing: content-box;
+}
+
+.header{
+    padding-top: 18px;
+    box-sizing: border-box;
+    background: #fff;
+}
+
+.header-title{
+    font-weight: bold;
+    font-size: 2.8rem;
+    display: inline-block;
+}
+
+.header-main{
+    display: flex;
+    margin-top: 20px;
+}
+
+.nav-list{
+    display: flex;
+}
+
+.nav-item{
+    padding: 0 16px 6px;
+    font-size: 20px;
+    font-weight: bold;
+    
+    
+    a{
+        display: inline-block;
+        position: relative;
+    }
+
+    &.karte{
+
+        a{
+            padding-left: 18px;
+            &::before{
+                content: "";
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 0;
+                width: 16px;
+                height: 20px;
+                background: url(../img/icon-karte.png) no-repeat center center/cover;
+            }
+        }
+    }
+
+    &.customer{
+        a{
+            padding-left: 17px;
+            &::before{
+                content: "";
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 0;
+                width: 14px;
+                height: 18px;
+                background: url(../img/icon-customer.png) no-repeat center center/cover;
+            }
+        }
+    }
+
+    &.store{
+        a{
+            padding-left: 21px;
+                &::before{
+                    content: "";
+                    position: absolute;
+                    top: 52%;
+                    transform: translateY(-50%);
+                    left: 0;
+                    width: 18px;
+                    height: 17px;
+                    background: url(../img/icon-store.png) no-repeat center center/cover;
+                }
+        }
+    }
+
+    &.active{
+        border-bottom: #5662B9 4px solid;
+    }
+}
+
+.user-items {
+    margin-left: auto;
+}
+
+.user-item{
+
+    font-size: 14px;
+
+    &+&{
+        margin-left: 40px;
+    }
+}

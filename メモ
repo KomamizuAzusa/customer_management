@@ -1,0 +1,337 @@
+<div class="detail-update">
+                <h2 class="block-title">顧客情報編集</h2>
+                <form id="form-customer-update" method="post" action="{{ route('customers.update') }}" enctype="multipart/form-data">
+                    @csrf
+                    <input type="hidden" name="id" value="{{ $customer->id }}">
+                    <ul class="customer-update-block1">
+                        <li class="customer-update-item">
+                            <label>
+                                <p class="form-item-title">姓<span class="required">必須</span></p>
+                                <input type="text" name="first_name" id="" value="{{ $customer->first_name }}">
+                            </label>
+                        </li>
+                        <li class="customer-update-item">
+                            <label>
+                                <p class="form-item-title">名<span class="required">必須</span></p>
+                                <input type="text" name="last_name" id="" value="{{ $customer->last_name }}">
+                            </label>
+                        </li>
+                        <li class="customer-update-item">
+                            <label>
+                                <p class="form-item-title">姓（カナ）<span class="required">必須</span></p>
+                                <input type="text" name="first_name_kana" id="" value="{{ $customer->first_name_kana }}">
+                            </label>
+                        </li>
+                        <li class="customer-update-item">
+                            <label>
+                                <p class="form-item-title">名（カナ）<span class="required">必須</span></p>
+                                <input type="text" name="last_name_kana" id="" value="{{ $customer->last_name_kana }}">
+                            </label>
+                        </li>
+                        <li class="customer-update-item">
+                            <p class="form-item-title">性別<span class="required">必須</span></p>
+                            <input type="hidden" id="customer_gender" value="{{ $customer->gender }}">
+                            <select name="gender" id="update_gender">
+                                <option disabled value>-</option>
+                                <option value='1'>男</option>
+                                <option value='2'>女</option>
+                                <option value='3'>その他</option>
+                            </select>
+                        </li>
+                    </ul>
+                    <ul class="customer-update-block2">
+    
+                        <li class="customer-update-item">
+                            <input type="hidden" id="by_hidden" value="{{ !empty($customer->birthday) ? MyFunction::dateYear($customer->birthday) : '' }}">
+                            <input type="hidden" id="bm_hidden" value="{{ !empty($customer->birthday) ? MyFunction::dateMonth($customer->birthday) : '' }}">
+                            <input type="hidden" id="bd_hidden" value="{{ !empty($customer->birthday) ? MyFunction::dateDay($customer->birthday) : '' }}">
+                            <label>
+                                <p class="form-item-title">生年月日</p>
+                                <select name="birthday_year" id="customer_birthday_year">
+                                    <!-- <option value="">-</option> -->
+                                    <option value="">-</option>
+                                    {{ MyFunction::yearSelect() }}
+                                </select>
+                                <span>年</span>
+                                <select name="birthday_month" id="customer_birthday_month">
+                                    <!-- <option value="">-</option> -->
+                                    <option value="">-</option>
+                                    {{ MyFunction::monthSelect() }}
+                                </select>
+                                <span>月</span>
+                                <select name="birthday_day" id="customer_birthday_day">
+                                    <!-- <option value="">-</option> -->
+                                    <option value="">-</option>
+                                    {{ MyFunction::daySelect() }}
+                                </select>
+                                <span>日</span>
+                            </label>
+                        </li>
+                        <li class="customer-update-item">
+                            <label>
+                                <p class="form-item-title">ニックネーム</p>
+                                <input type="text" name="nickname" id="" value="{{ $customer->nickname }}">
+                            </label>
+                        </li>
+                        <li class="customer-update-item">
+                            <label>
+                                <p class="form-item-title">メールアドレス</p>
+                                <input type="text" name="email" id="" value="{{ $customer->email }}">
+                            </label>
+                        </li>
+                        
+                    </ul>
+                    <ul class="customer-update-block3">
+                        <li class="customer-update-item">
+                            <label>
+                                <p class="form-item-title">郵便番号</p>
+                                <input type="text" name="postcode1" id="" value="{{ !empty($customer->postcode) ? MyFunction::postBefore($customer->postcode) : '' }}">
+                                <span>-</span>
+                                <input type="text" name="postcode2" id="" value="{{ !empty($customer->postcode) ? MyFunction::postAfter($customer->postcode) : '' }}">
+                            </label>
+                        </li>
+                        <li class="customer-update-item">
+                            <label>
+                                <p class="form-item-title">都道府県</p>
+                                <input type="text" name="prefecture" id="" value="{{ $customer->prefecture }}">
+                            </label>
+                        </li>
+                        <li class="customer-update-item">
+                            <label>
+                                <p class="form-item-title">市区町村</p>
+                                <input type="text" name="city" id="" value="{{ $customer->city }}">
+                            </label>
+                        </li>
+                        <li class="customer-update-item">
+                            <label>
+                                <p class="form-item-title">それ以降の住所</p>
+                                <input type="text" name="block" id="" value="{{ $customer->block }}">
+                            </label>
+                        </li>
+                    </ul>
+                    <ul class="customer-update-block4">
+                        <li class="customer-update-item">
+                            <label>
+                                <p class="form-item-title">電話番号（自宅）</p>
+                                <input type="text" name="phone_number1" id="" value="{{ !empty($customer->phone_number) ? MyFunction::phoneToArray($customer->phone_number)[0] : '' }}">
+                                <span>-</span>
+                                <input type="text" name="phone_number2" id="" value="{{ !empty($customer->phone_number) ? MyFunction::phoneToArray($customer->phone_number)[1] : '' }}">
+                                <span>-</span>
+                                <input type="text" name="phone_number3" id="" value="{{ !empty($customer->phone_number) ? MyFunction::phoneToArray($customer->phone_number)[2] : '' }}">
+                            </label>
+                        </li>
+                        <li class="customer-update-item" style="margin-left: 3rem;">
+                            <label>
+                                <p class="form-item-title">電話番号（携帯）</p>
+                                <input type="text" name="cell_phone_number1" id="" value="{{ !empty($customer->cell_phone_number) ? MyFunction::phoneToArray($customer->cell_phone_number)[0] : '' }}">
+                                <span>-</span>
+                                <input type="text" name="cell_phone_number2" id="" value="{{ !empty($customer->cell_phone_number) ? MyFunction::phoneToArray($customer->cell_phone_number)[1] : '' }}">
+                                <span>-</span>
+                                <input type="text" name="cell_phone_number3" id="" value="{{ !empty($customer->cell_phone_number) ? MyFunction::phoneToArray($customer->cell_phone_number)[2] : '' }}">
+                            </label>
+                        </li>
+                    </ul>
+                    <ul class="customer-update-block5">
+                        <li class="customer-update-item">
+                            <label>
+                                <p class="form-item-title">メモ</p>
+                                <textarea name="memo">{{ $customer->memo }}</textarea>
+                            </label>
+                        </li>
+                        <li class="customer-update-item" style="display: flex; margin-left:5rem;">
+                            <div class="file-input-left">
+                                <p class="form-item-title">画像</p>
+                                <div class="file-input-wrap">
+                                    <label>
+                                        <input type="file" name="image" id="image">
+                                        <span class="file-input-display">ファイルを選択</span>
+                                    </label>
+                                </div>
+                                <span id="file_name" style="display: inline-block;word-break: break-all">{{ !empty($customer->image) ? $customer->image : 'customer-noimage.png' }}</span>
+                            </div>
+                            
+                            <div class="file-input-right">
+                                <div class="file-preview">
+                                    <div class="file-preview-picture">
+                                        <img id="file_preview_img" src="/uploads/{{ !empty($customer->image) ? $customer->image : 'customer-noimage.png' }}" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <button class="crud-btn" type="submit" style="margin-top:1.4rem;">変更を保存</button>
+                </form>
+</div>
+
+
+
+
+
+            <li class="detail-info-item customer-sale-list">
+                        <ul class="customer-sale-head" class="">
+                            <li style="width: 9rem;">来店日</li>
+                            <li style="width: 16rem;">メニュー</li>
+                            <li style="width: 10rem;">担当者</li>
+                            <li style="width: 3rem;"></li>
+                        </ul>
+                    </li>
+
+<div class="customer-sale-body-wrap">
+                            @isset($sales)
+                            @foreach($sales as $sale)
+                            <ul class="customer-sale-body">
+                                <li style="width: 9rem;">{{ $sale->date }}</li>
+                                <li style="width: 16rem;">{{ $sale->menu }}</li>
+                                <li style="width: 9rem;">{{ $sale->employee }}</li>
+                                <li style="width: 4rem;"><a class="sale-detail-link" href="">詳細</a></li>
+                            </ul>
+                            @endforeach
+                            @endisset
+                        </div>
+
+<div class="detail-btn-container">
+
+
+                    <a class="message-btn sale" id="sale_btn">売上追加</a>
+                    <a class="message-btn line" id="message">LINE送信</a>
+                    <a class="message-btn delete" id="delete">顧客情報削除</a>
+                    <a href="{{ route('customers') }}" class="message-btn back" id="back">戻る</a>
+            </div>
+
+
+<!-- 最終来店日 view側 -->
+<input type="hidden" id="old_sdy1" value="{{ isset($old->sdy1) ? $old->sdy1 : ''}}">
+<input type="hidden" id="old_sdm1" value="{{ isset($old->sdm1) ? $old->sdm1 : ''}}">
+<input type="hidden" id="old_sdd1" value="{{ isset($old->sdd1) ? $old->sdd1 : ''}}">
+<input type="hidden" id="old_sdy2" value="{{ isset($old->sdy2) ? $old->sdy2 : ''}}">
+<input type="hidden" id="old_sdm2" value="{{ isset($old->sdm2) ? $old->sdm2 : ''}}">
+<input type="hidden" id="old_sdd2" value="{{ isset($old->sdd2) ? $old->sdd2 : ''}}">
+<select name="sdy1" id="sdy1">
+    <option value="">-</option>
+    {{ MyFunction::yearSelect10() }}
+</select>
+<span>年</span>
+<select name="sdm1" id="sdm1" disabled>
+    <option value="">-</option>
+    {{ MyFunction::monthSelect() }}
+</select>
+<span>月</span>
+<select name="sdd1" id="sdd1" disabled>
+    <option value="">-</option>
+    {{ MyFunction::daySelect() }}
+</select>
+<span>日〜</span>
+<select name="sdy2" id="sdy2">
+    <option value="">-</option>
+    {{ MyFunction::yearSelect10() }}
+</select>
+<span>年</span>
+<select name="sdm2" id="sdm2" disabled>
+    <option value="">-</option>
+    {{ MyFunction::monthSelect() }}
+</select>
+<span>月</span>
+<select name="sdd2" id="sdd2" disabled>
+    <option value="">-</option>
+    {{ MyFunction::daySelect() }}
+</select>
+<span>日</span>
+
+<!-- 最終来店日処理コントロら -->
+
+if(!( empty($request->sdy1) && empty($request->sdy2))){
+            if(!empty($request->sdy1)){
+                if(!empty($request->sdm1)){
+                    if(!empty($request->sdd1)){
+                        $sale_date_start = $request->sdy1.'-'.$request->sdm1.'-'.$request->sdd1;
+                    }else{
+                        $sale_date_start = $request->sdy1.'-'.$request->sdm1.'-01';
+                    }
+                }else{
+                    $sale_date_start = $request->sdy1.'-01-01';
+                }
+            }else{
+                $y = date("Y") - 50;
+                $sale_date_start = $y.'-01-01';
+            }
+            if(!empty($request->sdy2)){
+                if(!empty($request->sdm2)){
+                    if(!empty($request->sdd2)){
+                        $sale_date_end = $request->sdy2.'-'.$request->sdm2.'-'.$request->sdd2;
+                    }else{
+                        $sale_date_end = $request->sdy2.'-'.$request->sdm2.'-31';
+                    }
+                }else{
+                    $sale_date_end = $request->sdy2.'-12-31';
+                }
+            }else{
+                $sale_date_end = date("Y-m-d");
+            }
+        }
+
+        /*============================
+        顧客検索 売上日disabled無効にする
+    ============================*/
+
+        $('#sdy1').on('change',function(){
+        if($('#sdy1').val() != ''){
+            $('#sdm1').prop('disabled',false);
+        }else{
+            $('#sdm1').val("");
+            $('#sdd1').val("");
+            $('#sdm1').prop('disabled',true);
+        }
+    });
+    $('#sdm1').on('change',function(){
+        if($('#sdm1').val() != ''){
+            $('#sdd1').prop('disabled',false);
+        }else{
+            $('#sdd1').val("");
+            $('#sdd1').prop('disabled',true);
+        }
+    });
+    $('#sdy2').on('change',function(){
+        if($('#sdy2').val() != ''){
+            $('#sdm2').prop('disabled',false);
+        }else{
+            $('#sdm2').val("");
+            $('#sdd2').val("");
+            $('#sdm2').prop('disabled',true);
+        }
+    });
+    $('#sdm2').on('change',function(){
+        if($('#sdm2').val() != ''){
+            $('#sdd2').prop('disabled',false);
+        }else{
+            $('#sdd2').val("");
+            $('#sdd2').prop('disabled',true);
+        }
+    });
+
+
+    function oldDate(a,b){
+            let sd = document.getElementById(a);
+            var old_sd = document.getElementById(b).value;
+            for($i=0; $i<sd.length; $i++){
+            if(old_sd && sd.options[$i].value == old_sd){
+                if(a == 'sdy1'){
+                    document.getElementById('sdm1').disabled = false;
+                }else if(a == 'sdm1'){
+                    document.getElementById('sdd1').disabled = false;
+                }else if(a == 'sdy2' ){
+                    document.getElementById('sdm2').disabled = false;
+                }else if(a == 'sdm2' ){
+                    document.getElementById('sdd2').disabled = false;
+                }
+                sd.options[$i].setAttribute('selected', 'true')
+            }
+        }
+        }
+        
+        oldDate('sdy1','old_sdy1');
+        oldDate('sdm1','old_sdm1');
+        oldDate('sdd1','old_sdd1');
+        oldDate('sdy2','old_sdy2');
+        oldDate('sdm2','old_sdm2');
+        oldDate('sdd2','old_sdd2');
+        

@@ -1,0 +1,250 @@
+/*============================
+BASE
+============================*/
+img,
+svg {
+    width: 100%;
+    vertical-align: bottom;
+}
+a {
+    text-decoration: none;
+}
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    appearance: none;
+}
+input,
+textarea {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    appearance: none;
+}
+label {
+    margin-bottom: 5px;
+}
+dl,
+dd {
+    margin: 0;
+}
+/*============================
+Main
+============================*/
+.registration-title {
+    width: 1100px;
+    line-height: 40px;
+    margin: 40px auto 0;
+    border-top: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    background-color: #9cd0e8;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.catalog-title {
+    width: 1100px;
+    line-height: 40px;
+    margin: 0 auto;
+    border-top: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    background-color: #9cd0e8;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.registration-outer {
+    width: 1100px;
+    margin: 0 auto;
+
+    border: 1px solid #ddd;
+}
+.registration-wrapper {
+    width: 1050px;
+    margin: 0 auto;
+}
+.catalog-outer1 {
+    width: 1100px;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    background-color: #ddd;
+    padding: 6px 12px;
+}
+.catalog-outer2 {
+    width: 1100px;
+    margin: 0 auto 40px;
+    border: 1px solid #ddd;
+    padding: 6px 12px;
+}
+.catalog-wrapper1,
+.catalog-wrapper2 {
+    width: 1050px;
+    margin: 0 auto;
+}
+.list1 {
+    margin: 15px 0 15px 0;
+}
+.list2 {
+    margin-bottom: 15px;
+}
+.column {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #ddd;
+}
+/*============================
+CreateForm
+============================*/
+.form-item {
+    display: inline-block;
+    margin-left: 50px;
+}
+.text-box {
+    border: 1px solid #908d8d;
+    background-color: #fff;
+    color: #333;
+    padding: 5px;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1) inset;
+    border-radius: 5px;
+}
+.drop-box {
+    border: 1px solid #908d8d;
+    background-color: #fff;
+    color: #333;
+    padding: 5px;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 1px #bababa;
+    border-radius: 5px;
+}
+.required {
+    display: inline-block;
+    color: red;
+    font-size: 13px;
+    padding: 0 5px;
+    margin-left: 6px;
+}
+.form-item-title {
+    font-weight: bold;
+}
+.create-btn {
+    color: #fff;
+    background-color: #285ac8;
+    width: 160px;
+    line-height: 45px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    border-radius: 6px;
+    text-align: center;
+    margin-left: 120px;
+}
+.create-btn:hover {
+    opacity: 0.6;
+    transition: 0.3s;
+}
+/*============================
+Catalog
+============================*/
+.catalog-wrapper1 > div {
+    display: flex;
+}
+.catalog-wrapper2 > div {
+    display: flex;
+}
+.catalog-item-list {
+    font-weight: bold;
+}
+.catalog-employee-first-name-title {
+    flex-basis: 110px;
+}
+.catalog-employee-first-name {
+    flex-basis: 110px;
+    line-height: 35px;
+    font-size: 14px;
+}
+.catalog-employee-last-name-title {
+    flex-basis: 110px;
+}
+.catalog-employee-last-name {
+    flex-basis: 110px;
+    line-height: 35px;
+    font-size: 14px;
+}
+.catalog-employee-first-name-kana-title {
+    flex-basis: 160px;
+}
+.catalog-employee-first-name-kana {
+    flex-basis: 160px;
+    line-height: 35px;
+    font-size: 14px;
+}
+.catalog-employee-last-name-kana-title {
+    flex-basis: 160px;
+}
+.catalog-employee-last-name-kana {
+    flex-basis: 160px;
+    line-height: 35px;
+    font-size: 14px;
+}
+.catalog-employee-age-title {
+    flex-basis: 60px;
+}
+.catalog-employee-age {
+    flex-basis: 60px;
+    line-height: 35px;
+    font-size: 14px;
+}
+.catalog-employee-birthday-title {
+    flex-basis: 120px;
+}
+.catalog-employee-birthday {
+    flex-basis: 120px;
+    line-height: 35px;
+    font-size: 14px;
+}
+.catalog-employee-gender-title {
+    flex-basis: 80px;
+}
+.catalog-employee-gender {
+    flex-basis: 80px;
+    line-height: 35px;
+    font-size: 14px;
+}
+.catalog-button1 {
+    margin-right: 30px;
+    flex-basis: 110px;
+    background-color: #285ac8;
+    line-height: 35px;
+    border-radius: 6px;
+    text-align: center;
+}
+.catalog-button1 > a {
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+}
+.catalog-button1:hover {
+    opacity: 0.6;
+    transition: 0.3s;
+}
+.catalog-button2 {
+    flex-basis: 110px;
+    background-color: #f8494a;
+    line-height: 35px;
+    border-radius: 6px;
+    text-align: center;
+}
+.submit-btn {
+    color: #fff;
+}
+.catalog-button2:hover {
+    opacity: 0.6;
+    transition: 0.3s;
+}

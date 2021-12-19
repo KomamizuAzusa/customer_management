@@ -1,0 +1,109 @@
+input[name="first_name"],
+input[name="last_name"]{
+    width: 11rem;
+}
+input[name="first_name_kana"],
+input[name="last_name_kana"]{
+    width: 13rem;
+}
+
+select[name="gender"]{
+    width: 9rem;
+}
+
+input[name="nickname"]{
+    width: 12rem;
+}
+
+input[name="email"]{
+    width: 30rem;
+}
+
+input[name="email"]{
+    width: 30rem;
+}
+
+select[name="birthday_year"],
+select[name="birthday_month"],
+select[name="birthday_day"]{
+    padding: 0 0.5rem;
+}
+
+
+input[name="postcode1"]{
+    width: 6rem;
+}
+
+input[name="postcode2"]{
+    width: 7rem;
+}
+
+input[name="prefecture"]{
+    width: 8rem;
+}
+input[name="city"]{
+    width: 11rem;
+}
+input[name="block"]{
+    width: 30rem;
+}
+
+input[name="phone_number1"],
+input[name="phone_number2"],
+input[name="phone_number3"],
+input[name="cell_phone_number1"],
+input[name="cell_phone_number2"],
+input[name="cell_phone_number3"]{
+    width: 8rem;
+}
+
+textarea[name="memo"]{
+    width: 36rem;
+    height: 12rem;
+    padding: 0.6rem 0.6rem 0;
+    
+}
+
+#sale_date{
+    width: 20rem;
+}
+
+#sale_employee_id{
+    width: 20rem;
+}
+
+
+
+.file-input-wrap{
+    width: 10rem;
+}
+
+.file-input-display{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 6px 0;
+    width: 10rem;
+    margin: 0 0 10px;
+    background: #aaa;
+    color: #fff;
+    display: inline-block;
+    cursor: pointer;
+}
+
+input[type="file"]{
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0px;
+    height: 0rem;
+
+}
+
+.file-input-left{
+    width: 10rem;
+}
+.file-input-right{
+    margin-left: 3rem;
+}

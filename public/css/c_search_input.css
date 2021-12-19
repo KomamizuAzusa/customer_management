@@ -1,0 +1,150 @@
+input[name="name"],
+input[name="phone_number"]{
+    width: 15rem;
+}
+
+input[name="age1"],
+input[name="age2"],
+input[name="sale_count_before"],
+input[name="sale_count_after"]{
+    width: 6rem;
+}
+
+
+input[name="memo"]{
+    width: 35rem;
+}
+
+select[name="sdy1"],
+select[name="sdy2"]{
+    width: 9rem;
+}
+
+select[name="sdm1"],
+select[name="sdd1"],
+select[name="sdm2"],
+select[name="sdd2"]{
+    width: 5rem;
+}
+input[name="email"]{
+    width: 30rem;
+}
+
+select[name="gender"]{
+    width: 100px;
+}
+
+/*  */
+#customer_first_name,
+#customer_last_name{
+    width: 13rem;
+}
+
+#customer_first_name_kana,
+#customer_last_name_kana{
+    width: 16rem;
+}
+
+#customer_gender{
+    width: 10rem;
+}
+
+#customer_nickname{
+    width: 16rem;
+}
+
+#customer_email{
+    width: 32rem;
+}
+
+
+#customer_birthday_year,
+#customer_birthday_month,
+#customer_birthday_day{
+    padding: 0 0.5rem;
+    
+}
+
+#customer_birthday_month,
+#customer_birthday_day{
+    width: 7rem;
+}
+
+
+#customer_postcode1{
+    width: 8rem;
+}
+
+#customer_postcode2{
+    width: 9rem;
+}
+
+
+#customer_prefecture,
+#customer_city{
+    width: 12rem;
+}
+#customer_block{
+    width: 32rem;
+}
+
+#customer_birthday_year,
+#customer_phone_number1,
+#customer_phone_number2,
+#customer_phone_number3,
+#customer_cell_phone_number1,
+#customer_cell_phone_number2,
+#customer_cell_phone_number3{
+    width: 10rem;
+}
+
+#customer_memo{
+    width: 38rem;
+    height: 12rem;
+    padding: 0.6rem 0.6rem 0;
+    
+}
+
+#sale_employee_id{
+    width: 20rem;
+}
+
+#sale_create_memo{
+    width: 45rem;
+    padding: 6px;
+    height: 80%;
+}
+
+.file-input-wrap{
+    width: 10rem;
+}
+
+.file-input-display{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 6px 0;
+    width: 14rem;
+    margin: 0 0 10px;
+    background: #aaa;
+    color: #fff;
+    display: inline-block;
+    cursor: pointer;
+}
+
+input[type="file"]{
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0px;
+    height: 0rem;
+
+}
+
+.file-input-left{
+    width: 10rem;
+}
+.file-input-right{
+    margin-left: 3rem;
+}
